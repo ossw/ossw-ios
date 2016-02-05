@@ -12,6 +12,8 @@
 		EA76BE841C4FC7B200601367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE821C4FC7B200601367 /* Main.storyboard */; };
 		EA76BE861C4FC7B200601367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE851C4FC7B200601367 /* Assets.xcassets */; };
 		EA76BE891C4FC7B200601367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */; };
+		EA76BE911C4FCC8400601367 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76BE901C4FCC8400601367 /* RGBAImage.swift */; };
+		EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFA5AC1C4FF57900647286 /* BleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		EA76BE851C4FC7B200601367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA76BE881C4FC7B200601367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA76BE8A1C4FC7B200601367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA76BE901C4FCC8400601367 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
+		EAFFA5AC1C4FF57900647286 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				EA76BE7E1C4FC7B200601367 /* AppDelegate.swift */,
 				EA76BE801C4FC7B200601367 /* ViewController.swift */,
+				EA76BE901C4FCC8400601367 /* RGBAImage.swift */,
 				EA76BE821C4FC7B200601367 /* Main.storyboard */,
 				EA76BE851C4FC7B200601367 /* Assets.xcassets */,
 				EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */,
 				EA76BE8A1C4FC7B200601367 /* Info.plist */,
+				EAFFA5AC1C4FF57900647286 /* BleManager.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -96,6 +102,7 @@
 				TargetAttributes = {
 					EA76BE7A1C4FC7B200601367 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V4JH837YE2;
 					};
 				};
 			};
@@ -136,6 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA76BE811C4FC7B200601367 /* ViewController.swift in Sources */,
+				EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */,
+				EA76BE911C4FCC8400601367 /* RGBAImage.swift in Sources */,
 				EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,10 +258,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Watch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossw.Watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -260,10 +273,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Watch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ossw.Watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -286,6 +303,7 @@
 				EA76BE8F1C4FC7B200601367 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
