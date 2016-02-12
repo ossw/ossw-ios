@@ -18,6 +18,9 @@ class ViewController: UIViewController  {
     var bleManager:BleManager!
     
     
+    var timer = NSTimer()
+    
+    
     @IBOutlet weak var watchStatus: UILabel!
     @IBOutlet weak var watchConnectionTime: UILabel!
     @IBOutlet weak var watchReceivedBytes: UILabel!
@@ -55,6 +58,7 @@ class ViewController: UIViewController  {
     
     func connected(watch: CBPeripheral){
         self.watch = OSSWatch(watch: watch)
+        start()
     }
     
     func updateStatus(connection: BleManager.ConnectionStatus){
@@ -65,6 +69,7 @@ class ViewController: UIViewController  {
         case .NotConnected:
             self.watchStatus.text = "Disconnected"
             self.watchButton.setTitle("Connect watch", forState: UIControlState.Normal)
+            stopRefresh()
             self.watchButton.enabled=true
         case .Searching:
             self.watchButton.enabled=false
@@ -79,6 +84,28 @@ class ViewController: UIViewController  {
         }
     }
     
+    func start() {
+        if !timer.valid {
+            let aSelector : Selector = "updateStatistics"
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopRefresh() {
+        timer.invalidate()
+    }
+    
+    func updateStatistics() {
+        if watch != nil {
+            watchConnectionTime.text = updateTime(watch.connectionTime)
+            watchReceivedBytes.text = String(watch.dataIn)
+            watchSendBytest.text  = String(watch.dataOut)
+        }
+        
+    }
+    
+    
+    
     func updateFirmware(version: NSString?){
         firmwareLabel.text=String(version!)
         watch.synchTime()
@@ -92,7 +119,45 @@ class ViewController: UIViewController  {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateTime(connectionTime: NSTimeInterval) -> String {
+        
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        //Find the difference between current time and start time.
+        
+        var elapsedTime: NSTimeInterval = currentTime - connectionTime
+        
+        //calculate the minutes in elapsed time.
+        
+        let hours = UInt8(elapsedTime / 3600.0)
+        
+        elapsedTime -= (NSTimeInterval(hours) * 3600)
+        
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        
+        let seconds = UInt8(elapsedTime)
+        
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        //find out the fraction of milliseconds to be displayed.
+        
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
 
+        let strHours = String(format: "%02d", hours)
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        
+        return "\(strHours):\(strMinutes):\(strSeconds)"
+    }
 
 }
 

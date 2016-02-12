@@ -25,6 +25,10 @@ class OSSWatch{
     var peripheral : CBPeripheral
     var onInitialize : ((NSString?) -> Void)?
     
+    var connectionTime = NSDate.timeIntervalSinceReferenceDate()
+    var dataIn = 0
+    var dataOut = 0
+    
     
     init(watch: CBPeripheral){
         print("init watch")
@@ -58,10 +62,19 @@ class OSSWatch{
         var val = currentTime.bigEndian
         data.appendBytes(&val, length: sizeofValue(val))
         data.appendBytes(&currentTime, length: sizeof(UInt32))
-
+        
+        sendTx(data)
+        
+    }
+    
+    
+    func sendTx(data: NSData){
+        dataOut+=data.length
         peripheralHandler.writeValue(OSSWTxCharacteristicUUID,data:data)
-        
-        
+    }
+    
+    func receiveTx(data: NSData){
+        dataIn+=data.length
     }
     
     func currentTimeMillis() -> UInt32{
