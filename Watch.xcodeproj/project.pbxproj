@@ -13,6 +13,7 @@
 		EA76BE841C4FC7B200601367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE821C4FC7B200601367 /* Main.storyboard */; };
 		EA76BE861C4FC7B200601367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE851C4FC7B200601367 /* Assets.xcassets */; };
 		EA76BE891C4FC7B200601367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */; };
+		EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */; };
 		EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFA5AC1C4FF57900647286 /* BleManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		EA76BE851C4FC7B200601367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA76BE881C4FC7B200601367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA76BE8A1C4FC7B200601367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
 		EAFFA5AC1C4FF57900647286 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				EA76BE7E1C4FC7B200601367 /* AppDelegate.swift */,
+				EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */,
 				EA76BE801C4FC7B200601367 /* ViewController.swift */,
 				EA76BE821C4FC7B200601367 /* Main.storyboard */,
 				EA76BE851C4FC7B200601367 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA76BE811C4FC7B200601367 /* ViewController.swift in Sources */,
+				EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */,
 				EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */,
 				EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */,
 				EA466D021C6A83FF00789577 /* WatchPeripheral.swift in Sources */,

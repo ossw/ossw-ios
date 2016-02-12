@@ -247,5 +247,23 @@
             </objects>
             <point key="canvasLocation" x="168" y="213"/>
         </scene>
+        <!--Code Scanner-->
+        <scene sceneID="apX-2U-1zB">
+            <objects>
+                <viewController storyboardIdentifier="QRCodeScanner" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JIv-ua-GgP" customClass="QRCodeScanner" customModule="Watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zIM-pm-t62"/>
+                        <viewControllerLayoutGuide type="bottom" id="aMl-aU-CLO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E2d-Bp-yeV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UvM-SA-rmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="213"/>
+        </scene>
     </scenes>
 </document>

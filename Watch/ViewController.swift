@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController  {
+class ViewController: UIViewController,ModalViewControllerDelegate  {
 
     let OSSWMyWatchUUID = NSUUID(UUIDString: "AE4A5368-12FC-2697-A8E3-4E37C33F6FD6")
     
@@ -29,11 +29,8 @@ class ViewController: UIViewController  {
     @IBOutlet weak var watchButton: UIButton!
     
     @IBOutlet weak var firmwareLabel: UILabel!
-
-    var watchConnectionStartTime = NSTimeInterval()
     
     var connection: BleManager.ConnectionStatus = .NotConnected
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +53,18 @@ class ViewController: UIViewController  {
 
     }
     
-    func connected(watch: CBPeripheral){
-        self.watch = OSSWatch(watch: watch)
-        start()
+    @IBAction func scanQrCode(sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let qrCodeScanner = storyboard.instantiateViewControllerWithIdentifier("QRCodeScanner") as! QRCodeScanner
+        qrCodeScanner.delegate=self;
+        self.presentViewController(qrCodeScanner, animated: true, completion: nil)
     }
+    
+    func foundCode(value : NSString){
+        print(value)
+    }
+    
     
     func updateStatus(connection: BleManager.ConnectionStatus){
         self.connection=connection;
@@ -84,7 +89,17 @@ class ViewController: UIViewController  {
         }
     }
     
-    func start() {
+    func connected(watch: CBPeripheral){
+        self.watch = OSSWatch(watch: watch)
+        startRefresh()
+    }
+    
+    func updateFirmware(version: NSString?){
+        firmwareLabel.text=String(version!)
+        watch.synchTime()
+    }
+    
+    func startRefresh() {
         if !timer.valid {
             let aSelector : Selector = "updateStatistics"
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector,     userInfo: nil, repeats: true)
@@ -105,14 +120,6 @@ class ViewController: UIViewController  {
     }
     
     
-    
-    func updateFirmware(version: NSString?){
-        firmwareLabel.text=String(version!)
-        watch.synchTime()
-    }
-    
-    @IBAction func scanQrCode(sender: UIButton) {
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -144,16 +151,10 @@ class ViewController: UIViewController  {
         
         elapsedTime -= NSTimeInterval(seconds)
         
-        //find out the fraction of milliseconds to be displayed.
-        
-        
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
-
         let strHours = String(format: "%02d", hours)
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
-
-        
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
         return "\(strHours):\(strMinutes):\(strSeconds)"
@@ -161,3 +162,7 @@ class ViewController: UIViewController  {
 
 }
 
+protocol ModalViewControllerDelegate
+{
+    func foundCode(var value : NSString)
+}
