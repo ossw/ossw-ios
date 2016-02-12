@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA466D021C6A83FF00789577 /* WatchPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA466D011C6A83FF00789577 /* WatchPeripheral.swift */; };
 		EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76BE7E1C4FC7B200601367 /* AppDelegate.swift */; };
 		EA76BE811C4FC7B200601367 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76BE801C4FC7B200601367 /* ViewController.swift */; };
 		EA76BE841C4FC7B200601367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE821C4FC7B200601367 /* Main.storyboard */; };
 		EA76BE861C4FC7B200601367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE851C4FC7B200601367 /* Assets.xcassets */; };
 		EA76BE891C4FC7B200601367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */; };
-		EA76BE911C4FCC8400601367 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76BE901C4FCC8400601367 /* RGBAImage.swift */; };
 		EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFA5AC1C4FF57900647286 /* BleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA466D011C6A83FF00789577 /* WatchPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPeripheral.swift; sourceTree = "<group>"; };
 		EA76BE7B1C4FC7B200601367 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA76BE7E1C4FC7B200601367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA76BE801C4FC7B200601367 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		EA76BE851C4FC7B200601367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA76BE881C4FC7B200601367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA76BE8A1C4FC7B200601367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA76BE901C4FCC8400601367 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
 		EAFFA5AC1C4FF57900647286 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,12 +60,12 @@
 			children = (
 				EA76BE7E1C4FC7B200601367 /* AppDelegate.swift */,
 				EA76BE801C4FC7B200601367 /* ViewController.swift */,
-				EA76BE901C4FCC8400601367 /* RGBAImage.swift */,
 				EA76BE821C4FC7B200601367 /* Main.storyboard */,
 				EA76BE851C4FC7B200601367 /* Assets.xcassets */,
 				EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */,
 				EA76BE8A1C4FC7B200601367 /* Info.plist */,
 				EAFFA5AC1C4FF57900647286 /* BleManager.swift */,
+				EA466D011C6A83FF00789577 /* WatchPeripheral.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -144,8 +144,8 @@
 			files = (
 				EA76BE811C4FC7B200601367 /* ViewController.swift in Sources */,
 				EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */,
-				EA76BE911C4FCC8400601367 /* RGBAImage.swift in Sources */,
 				EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */,
+				EA466D021C6A83FF00789577 /* WatchPeripheral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
