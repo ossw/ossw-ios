@@ -15,7 +15,7 @@
 		EA76BE891C4FC7B200601367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */; };
 		EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */; };
 		EA7F60631C6FAFB40047EAE0 /* SocketIOClientSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = EA7F60551C6FACF10047EAE0 /* SocketIOClientSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EA7F60651C6FC6120047EAE0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60641C6FC6120047EAE0 /* ServerManager.swift */; };
+		EA7F60651C6FC6120047EAE0 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60641C6FC6120047EAE0 /* SocketManager.swift */; };
 		EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFA5AC1C4FF57900647286 /* BleManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +96,7 @@
 		EA76BE8A1C4FC7B200601367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
 		EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Socket.IO-Client-Swift.xcodeproj"; path = "socket.io-client-swift/Socket.IO-Client-Swift.xcodeproj"; sourceTree = "<group>"; };
-		EA7F60641C6FC6120047EAE0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		EA7F60641C6FC6120047EAE0 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		EAFFA5AC1C4FF57900647286 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 				EA76BE8A1C4FC7B200601367 /* Info.plist */,
 				EAFFA5AC1C4FF57900647286 /* BleManager.swift */,
 				EA466D011C6A83FF00789577 /* WatchPeripheral.swift */,
-				EA7F60641C6FC6120047EAE0 /* ServerManager.swift */,
+				EA7F60641C6FC6120047EAE0 /* SocketManager.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 				EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */,
 				EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */,
 				EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */,
-				EA7F60651C6FC6120047EAE0 /* ServerManager.swift in Sources */,
+				EA7F60651C6FC6120047EAE0 /* SocketManager.swift in Sources */,
 				EA466D021C6A83FF00789577 /* WatchPeripheral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

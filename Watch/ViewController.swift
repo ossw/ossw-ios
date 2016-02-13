@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreBluetooth
-import SocketIOClientSwift
 
 
 class ViewController: UIViewController,ModalViewControllerDelegate  {
@@ -17,6 +16,8 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
     
     var watch: OSSWatch!
     var bleManager:BleManager!
+    
+    var socketManager: SocketManager!
     
     
     var timer = NSTimer()
@@ -31,7 +32,8 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
     
     @IBOutlet weak var firmwareLabel: UILabel!
     
-    var connection: BleManager.ConnectionStatus = .NotConnected
+    var watchConnection: BleManager.ConnectionStatus = .NotConnected
+    var serverConnection: SocketManager.ConnectionStatus = .NotConnected
     
     
     @IBOutlet weak var serverAddress: UILabel!
@@ -46,17 +48,18 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        startRefresh()
     }
     
     
     @IBAction func connectWatch(sender: UIButton) {
         
         if bleManager==nil{
-            bleManager = BleManager(updateStatus:updateStatus,peripheralUUID: OSSWMyWatchUUID!)
+            bleManager = BleManager(updateStatus:updateDeveiceStatus,peripheralUUID: OSSWMyWatchUUID!)
         }
         
         self.watchButton.enabled=false
-        if connection == .NotConnected || connection == .NotInitialized  {
+        if watchConnection == .NotConnected || watchConnection == .NotInitialized  {
             bleManager.connect(connected);
         } else {
             bleManager.disconnect(watch.peripheral);
@@ -66,60 +69,64 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
     }
     
     @IBAction func scanQrCode(sender: UIButton) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let qrCodeScanner = storyboard.instantiateViewControllerWithIdentifier("QRCodeScanner") as! QRCodeScanner
-        qrCodeScanner.delegate=self;
-        self.presentViewController(qrCodeScanner, animated: true, completion: nil)
+        self.serverButton.enabled=false
+        if serverConnection == .NotConnected  {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let qrCodeScanner = storyboard.instantiateViewControllerWithIdentifier("QRCodeScanner") as! QRCodeScanner
+            qrCodeScanner.delegate=self;
+            self.presentViewController(qrCodeScanner, animated: true, completion: nil)
+        } else {
+            if socketManager != nil{
+                socketManager.disconnect()
+                socketManager=nil
+            }
+        }
     }
     
     func foundCode(value : NSString){
-        print(value)
-        
         let qrcode = parseQRCode(value)
-        
-        
-        
-        let socket = SocketIOClient(socketURL: qrcode.url! )
-        socket.on("message") {data, ack in
-            print("Message for you! \(data[0])")
+        if (socketManager == nil){
+            socketManager = SocketManager(updateStatus:updateServerStatus,channel: qrcode)
         }
-        socket.on("connect") {data, ack in
-            print("socket connected")
-            socket.emit("channel", ["token": qrcode.token!])
-//            socket.emit("message", "test")
-        }
-        socket.connect()
+        
+        socketManager.connect()
         
     }
     
-    struct QRCode {
-        var token: String?
-        var url : NSURL?
-    }
     
-    func parseQRCode(value : NSString) -> QRCode{
-        var qrCode = QRCode()
+    func parseQRCode(value : NSString) -> AnyObject{
         do {
             let data = value.dataUsingEncoding(NSUTF8StringEncoding)
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-            if let token = json["token"] as? String {
-                qrCode.token=token
-            }
-            if let url = json["url"] as? String {
-                qrCode.url=NSURL(string:url)
-            }
-            
+            return json
         } catch {
             print("error serializing JSON: \(error)")
         }
-        return qrCode
+        return [:]
+    }
+    
+    
+    func updateServerStatus(connection: SocketManager.ConnectionStatus){
+        self.serverConnection=connection;
+        switch connection {
+        case .NotConnected:
+            self.serverStatus.text = "Disconnected"
+            self.serverButton.setTitle("Scan QR code", forState: UIControlState.Normal)
+            self.serverButton.enabled=true
+        case .Connecting:
+            self.serverStatus.text = "Connecting..."
+            self.serverButton.setTitle("Disconnect server", forState: UIControlState.Normal)
+        case .Connected:
+            self.serverButton.enabled=true
+            self.serverStatus.text = "Connected"
+            self.serverAddress.text = socketManager.serverAddress
+        }
     }
 
     
     
-    func updateStatus(connection: BleManager.ConnectionStatus){
-        self.connection=connection;
+    func updateDeveiceStatus(connection: BleManager.ConnectionStatus){
+        self.watchConnection=connection;
         switch connection {
         case .NotInitialized:
             self.watchStatus.text = "Not initialized"
@@ -141,9 +148,10 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
         }
     }
     
+    
     func connected(watch: CBPeripheral){
         self.watch = OSSWatch(watch: watch)
-        startRefresh()
+//        startRefresh()
     }
     
     func updateFirmware(version: NSString?){
@@ -167,6 +175,11 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
             watchConnectionTime.text = updateTime(watch.connectionTime)
             watchReceivedBytes.text = String(watch.dataIn)
             watchSendBytest.text  = String(watch.dataOut)
+        }
+        if socketManager != nil {
+            serverConnectionTime.text = updateTime(socketManager.connectionTime)
+            serverReceivedBytes.text = String(socketManager.dataIn)
+            serverSendBytes.text  = String(socketManager.dataOut)
         }
         
     }
