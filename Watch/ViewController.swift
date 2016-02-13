@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreBluetooth
+import SocketIOClientSwift
 
 
 class ViewController: UIViewController,ModalViewControllerDelegate  {
@@ -31,6 +32,17 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
     @IBOutlet weak var firmwareLabel: UILabel!
     
     var connection: BleManager.ConnectionStatus = .NotConnected
+    
+    
+    @IBOutlet weak var serverAddress: UILabel!
+    @IBOutlet weak var serverStatus: UILabel!
+    @IBOutlet weak var serverConnectionTime: UILabel!
+    
+    @IBOutlet weak var serverReceivedBytes: UILabel!
+    
+    @IBOutlet weak var serverSendBytes: UILabel!
+    
+    @IBOutlet weak var serverButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +75,47 @@ class ViewController: UIViewController,ModalViewControllerDelegate  {
     
     func foundCode(value : NSString){
         print(value)
+        
+        let qrcode = parseQRCode(value)
+        
+        
+        
+        let socket = SocketIOClient(socketURL: qrcode.url! )
+        socket.on("message") {data, ack in
+            print("Message for you! \(data[0])")
+        }
+        socket.on("connect") {data, ack in
+            print("socket connected")
+            socket.emit("channel", ["token": qrcode.token!])
+//            socket.emit("message", "test")
+        }
+        socket.connect()
+        
     }
+    
+    struct QRCode {
+        var token: String?
+        var url : NSURL?
+    }
+    
+    func parseQRCode(value : NSString) -> QRCode{
+        var qrCode = QRCode()
+        do {
+            let data = value.dataUsingEncoding(NSUTF8StringEncoding)
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            if let token = json["token"] as? String {
+                qrCode.token=token
+            }
+            if let url = json["url"] as? String {
+                qrCode.url=NSURL(string:url)
+            }
+            
+        } catch {
+            print("error serializing JSON: \(error)")
+        }
+        return qrCode
+    }
+
     
     
     func updateStatus(connection: BleManager.ConnectionStatus){

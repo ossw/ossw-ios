@@ -1,0 +1,3 @@
+[submodule "socket.io-client-swift"]
+	path = socket.io-client-swift
+	url = git@github.com:socketio/socket.io-client-swift.git

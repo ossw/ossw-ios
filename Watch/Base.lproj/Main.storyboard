@@ -236,6 +236,12 @@
                     </view>
                     <connections>
                         <outlet property="firmwareLabel" destination="WIw-LF-eFS" id="I9q-mg-wah"/>
+                        <outlet property="serverAddress" destination="vqs-Jk-AKF" id="ctJ-02-hI4"/>
+                        <outlet property="serverButton" destination="Own-a5-UnB" id="Zai-aF-RoV"/>
+                        <outlet property="serverConnectionTime" destination="cK8-hf-Z9H" id="3zA-RE-xQ2"/>
+                        <outlet property="serverReceivedBytes" destination="6Oo-MN-gku" id="F5l-aw-BEF"/>
+                        <outlet property="serverSendBytes" destination="ec7-0Q-yLR" id="bRC-ci-ras"/>
+                        <outlet property="serverStatus" destination="PPw-v5-rmg" id="D7X-eI-U5Y"/>
                         <outlet property="watchButton" destination="xJp-88-VK6" id="4ah-9X-9Rm"/>
                         <outlet property="watchConnectionTime" destination="VMZ-xq-lU5" id="r28-Av-EaT"/>
                         <outlet property="watchReceivedBytes" destination="ZQ0-HY-iwe" id="YSY-ca-CFf"/>

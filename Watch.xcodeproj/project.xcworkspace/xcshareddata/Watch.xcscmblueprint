@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D4195B4567B17AD87CB3B021F986B5068C2167CB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D4195B4567B17AD87CB3B021F986B5068C2167CB" : 0,
+    "01C4019DAB2F13C7FB458F088D0A991884C46F1A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A6AA05A7-F2C0-4EE4-8DF5-7E6B4F6384B3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D4195B4567B17AD87CB3B021F986B5068C2167CB" : "Watch\/",
+    "01C4019DAB2F13C7FB458F088D0A991884C46F1A" : "Watch\/socket.io-client-swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Watch",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Watch.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:socketio\/socket.io-client-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01C4019DAB2F13C7FB458F088D0A991884C46F1A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ossw\/ossw-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4195B4567B17AD87CB3B021F986B5068C2167CB"
+    }
+  ]
+}

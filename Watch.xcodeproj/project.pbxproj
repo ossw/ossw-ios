@@ -14,8 +14,76 @@
 		EA76BE861C4FC7B200601367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE851C4FC7B200601367 /* Assets.xcassets */; };
 		EA76BE891C4FC7B200601367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA76BE871C4FC7B200601367 /* LaunchScreen.storyboard */; };
 		EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */; };
+		EA7F60631C6FAFB40047EAE0 /* SocketIOClientSwift.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = EA7F60551C6FACF10047EAE0 /* SocketIOClientSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA7F60651C6FC6120047EAE0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F60641C6FC6120047EAE0 /* ServerManager.swift */; };
 		EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFFA5AC1C4FF57900647286 /* BleManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA7F60541C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2191B51F16C00EEBB58;
+			remoteInfo = "SocketIO-iOS";
+		};
+		EA7F60561C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2241B51F16C00EEBB58;
+			remoteInfo = "SocketIO-iOSTests";
+		};
+		EA7F60581C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2381B51F18A00EEBB58;
+			remoteInfo = "SocketIO-Mac";
+		};
+		EA7F605A1C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 572EF2421B51F18A00EEBB58;
+			remoteInfo = "SocketIO-MacTests";
+		};
+		EA7F605C1C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57634A161BD9B46A00E19CD7;
+			remoteInfo = "SocketIO-tvOS";
+		};
+		EA7F605E1C6FACF10047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57634A3B1BD9B46D00E19CD7;
+			remoteInfo = "SocketIO-tvOSTests";
+		};
+		EA7F60601C6FAD850047EAE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 572EF2181B51F16C00EEBB58;
+			remoteInfo = "SocketIO-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA7F60621C6FAF620047EAE0 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA7F60631C6FAFB40047EAE0 /* SocketIOClientSwift.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA466D011C6A83FF00789577 /* WatchPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchPeripheral.swift; sourceTree = "<group>"; };
@@ -27,6 +95,8 @@
 		EA76BE881C4FC7B200601367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA76BE8A1C4FC7B200601367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA7F60451C6E7AB60047EAE0 /* QRCodeScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
+		EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Socket.IO-Client-Swift.xcodeproj"; path = "socket.io-client-swift/Socket.IO-Client-Swift.xcodeproj"; sourceTree = "<group>"; };
+		EA7F60641C6FC6120047EAE0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		EAFFA5AC1C4FF57900647286 /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,6 +116,7 @@
 			children = (
 				EA76BE7D1C4FC7B200601367 /* Watch */,
 				EA76BE7C1C4FC7B200601367 /* Products */,
+				EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,8 +140,22 @@
 				EA76BE8A1C4FC7B200601367 /* Info.plist */,
 				EAFFA5AC1C4FF57900647286 /* BleManager.swift */,
 				EA466D011C6A83FF00789577 /* WatchPeripheral.swift */,
+				EA7F60641C6FC6120047EAE0 /* ServerManager.swift */,
 			);
 			path = Watch;
+			sourceTree = "<group>";
+		};
+		EA7F604C1C6FACF10047EAE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA7F60551C6FACF10047EAE0 /* SocketIOClientSwift.framework */,
+				EA7F60571C6FACF10047EAE0 /* SocketIO-iOSTests.xctest */,
+				EA7F60591C6FACF10047EAE0 /* SocketIOClientSwift.framework */,
+				EA7F605B1C6FACF10047EAE0 /* SocketIO-MacTests.xctest */,
+				EA7F605D1C6FACF10047EAE0 /* SocketIO.framework */,
+				EA7F605F1C6FACF10047EAE0 /* SocketIO-tvOSTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,10 +168,12 @@
 				EA76BE771C4FC7B200601367 /* Sources */,
 				EA76BE781C4FC7B200601367 /* Frameworks */,
 				EA76BE791C4FC7B200601367 /* Resources */,
+				EA7F60621C6FAF620047EAE0 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EA7F60611C6FAD850047EAE0 /* PBXTargetDependency */,
 			);
 			name = Watch;
 			productName = Watch;
@@ -120,12 +207,63 @@
 			mainGroup = EA76BE721C4FC7B200601367;
 			productRefGroup = EA76BE7C1C4FC7B200601367 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA7F604C1C6FACF10047EAE0 /* Products */;
+					ProjectRef = EA7F604B1C6FACF10047EAE0 /* Socket.IO-Client-Swift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EA76BE7A1C4FC7B200601367 /* Watch */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EA7F60551C6FACF10047EAE0 /* SocketIOClientSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketIOClientSwift.framework;
+			remoteRef = EA7F60541C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7F60571C6FACF10047EAE0 /* SocketIO-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SocketIO-iOSTests.xctest";
+			remoteRef = EA7F60561C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7F60591C6FACF10047EAE0 /* SocketIOClientSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketIOClientSwift.framework;
+			remoteRef = EA7F60581C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7F605B1C6FACF10047EAE0 /* SocketIO-MacTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SocketIO-MacTests.xctest";
+			remoteRef = EA7F605A1C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7F605D1C6FACF10047EAE0 /* SocketIO.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SocketIO.framework;
+			remoteRef = EA7F605C1C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7F605F1C6FACF10047EAE0 /* SocketIO-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SocketIO-tvOSTests.xctest";
+			remoteRef = EA7F605E1C6FACF10047EAE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EA76BE791C4FC7B200601367 /* Resources */ = {
@@ -149,11 +287,20 @@
 				EA7F60461C6E7AB60047EAE0 /* QRCodeScanner.swift in Sources */,
 				EAFFA5AD1C4FF57900647286 /* BleManager.swift in Sources */,
 				EA76BE7F1C4FC7B200601367 /* AppDelegate.swift in Sources */,
+				EA7F60651C6FC6120047EAE0 /* ServerManager.swift in Sources */,
 				EA466D021C6A83FF00789577 /* WatchPeripheral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA7F60611C6FAD850047EAE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SocketIO-iOS";
+			targetProxy = EA7F60601C6FAD850047EAE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EA76BE821C4FC7B200601367 /* Main.storyboard */ = {
